@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    char a[10001],b[10001];
+    int i,h1[26]={0},h2[26]={0},s=0,c,t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%s %s",a,b);
+        for(i=0;a[i]!='\0';i++)
+            {
+                h1[a[i]-'a']++;
+                
+            }
+            for(i=0;b[i]!='\0';i++)
+            {
+                h2[b[i]-'a']++;
+            }
+            for(i=0;i<26;i++)
+            {
+                    c=abs(h1[i]-h2[i]);
+                    s+=c;
+                    h1[i]=0;h2[i]=0;
+            }
+                printf("%d\n",s);
+                s=0;
+    }
+    return 0;
+}
